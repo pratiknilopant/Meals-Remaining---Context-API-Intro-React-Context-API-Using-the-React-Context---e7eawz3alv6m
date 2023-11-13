@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, createContext  } from "react";
 
 export const MealsContext = createContext();
 const todaysMeals = [
@@ -8,7 +8,7 @@ const todaysMeals = [
     { id: 3, name: 'Baked Potatoes' },
 ]
 
-const MealsProvider = () => {
+const MealsProvider = ({children}) => {
     const [meals, setMeals] = useState(todaysMeals);
 
     const tickMeal = (mealId) => {
